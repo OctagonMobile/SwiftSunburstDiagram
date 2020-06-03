@@ -84,6 +84,7 @@ public struct Node: Identifiable, Equatable {
     public var showName: Bool = true
     public var image: UIImage? = nil
     public var backgroundColor: UIColor? = nil
+    public var associatedObject: Any? 
 
     // Internal values
     var computedValue: Double = 0.0
