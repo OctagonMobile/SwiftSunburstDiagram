@@ -42,6 +42,9 @@ public class SunburstConfiguration: ObservableObject {
 
     @Published public var selectedNode: Node?
     @Published public var focusedNode: Node?
+    @Published public var shouldFocusNode: Bool = true
+    @Published public var strokeColor: Color?
+
 
     private var cancellable: AnyCancellable?
     private var isValidatingAndPreparing = false

@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UISplitViewControllerDe
         configuration.expandedArcThickness = 52.0
         configuration.maximumExpandedRingsShownCount = 2
         configuration.maximumRingsShownCount = 4
+        configuration.shouldFocusNode = false
+        configuration.strokeColor = Color.gray
 
         // Use a UIHostingController as window root view controller
         if let windowScene = scene as? UIWindowScene {

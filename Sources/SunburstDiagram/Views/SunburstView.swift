@@ -37,7 +37,11 @@ public struct SunburstView: View {
                 if self.sunburst.configuration.selectedNode == arc.node && self.sunburst.configuration.focusedNode == arc.node {
                     self.sunburst.configuration.focusedNode = self.sunburst.configuration.parentForNode(arc.node)
                 } else if self.sunburst.configuration.selectedNode == arc.node {
-                    self.sunburst.configuration.focusedNode = arc.node
+                    if self.sunburst.configuration.shouldFocusNode  {
+                        self.sunburst.configuration.focusedNode = arc.node
+                    } else {
+                        self.sunburst.configuration.selectedNode = nil
+                    }
                 } else {
                     self.sunburst.configuration.selectedNode = arc.node
                 }
