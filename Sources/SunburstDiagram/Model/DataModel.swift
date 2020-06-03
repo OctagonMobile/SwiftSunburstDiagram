@@ -75,6 +75,8 @@ public class SunburstConfiguration: ObservableObject {
 
 /// The `Node` class holds the data shown in the diagram
 public struct Node: Identifiable, Equatable {
+    
+    
     public let id = UUID()
 
     public let name: String
@@ -84,7 +86,7 @@ public struct Node: Identifiable, Equatable {
     public var showName: Bool = true
     public var image: UIImage? = nil
     public var backgroundColor: UIColor? = nil
-    public var associatedObject: Any? 
+    public var associatedObject: Any?
 
     // Internal values
     var computedValue: Double = 0.0
@@ -98,6 +100,10 @@ public struct Node: Identifiable, Equatable {
         self.value = value
         self.backgroundColor = backgroundColor
         self.children = children
+    }
+    
+    public static func == (lhs: Node, rhs: Node) -> Bool {
+        return lhs.name == rhs.name && lhs.children == rhs.children && lhs.value == rhs.value && lhs.image == rhs.image && lhs.backgroundColor == rhs.backgroundColor
     }
 }
 
