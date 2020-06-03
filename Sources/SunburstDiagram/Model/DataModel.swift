@@ -93,13 +93,15 @@ public struct Node: Identifiable, Equatable {
     var computedBackgroundColor: UIColor = .systemGray
 
     public init(name: String, showName: Bool = true, image: UIImage? = nil,
-                value: Double? = nil, backgroundColor: UIColor? = nil, children: [Node] = []) {
+                value: Double? = nil, backgroundColor: UIColor? = nil, children: [Node] = [],
+                associatedObject: Any? = nil) {
         self.name = name
         self.showName = showName
         self.image = image
         self.value = value
         self.backgroundColor = backgroundColor
         self.children = children
+        self.associatedObject = associatedObject
     }
     
     public static func == (lhs: Node, rhs: Node) -> Bool {
