@@ -33,7 +33,6 @@ public struct SunburstView: View {
     public func highlightNodes(withName name: String) {
         let nodesToHighlight = highlightNodes(nodes: self.sunburst.configuration.nodes,
                                               name: name)
-        self.sunburst.configuration.selectedNode = nil
         self.sunburst.configuration.highlightedNodes = nodesToHighlight
     }
     
