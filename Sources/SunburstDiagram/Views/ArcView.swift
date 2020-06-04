@@ -21,7 +21,7 @@ struct ArcView: View {
     }
     
     var body: some View {
-        let animation = Animation.easeInOut
+        let animation = Animation.easeInOut(duration: 0.5)
         let arcShape = ArcShape(arc, configuration: configuration)
 
         return ZStack() {
