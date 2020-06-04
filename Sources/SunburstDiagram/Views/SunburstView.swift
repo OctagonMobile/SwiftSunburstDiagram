@@ -34,8 +34,6 @@ public struct SunburstView: View {
         let nodesToHighlight = highlightNodes(nodes: self.sunburst.configuration.nodes,
                                               name: name)
         self.sunburst.configuration.highlightedNodes = nodesToHighlight
-        self.sunburst.configuration.selectedNode = nodesToHighlight.first
-
     }
     
     private func highlightNodes(nodes: [Node],
@@ -59,7 +57,6 @@ public struct SunburstView: View {
                 guard self.sunburst.configuration.allowsSelection else { return }
                 if self.sunburst.configuration.highlightedNodes?.isEmpty == false {
                     self.sunburst.configuration.highlightedNodes?.removeAll()
-                    self.sunburst.configuration.selectedNode = nil
                 } else if self.sunburst.configuration.selectedNode == arc.node && self.sunburst.configuration.focusedNode == arc.node {
                     self.sunburst.configuration.focusedNode = self.sunburst.configuration.parentForNode(arc.node)
                 } else if self.sunburst.configuration.selectedNode == arc.node {
