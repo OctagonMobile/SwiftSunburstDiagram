@@ -26,7 +26,7 @@ struct ArcView: View {
 
         return ZStack() {
             arcShape.fill(arc.backgroundColor).animation(animation)
-            arcShape.stroke(configuration.strokeColor ?? Color.primary, lineWidth: (isNodeSelected() || shouldHighlightNode()) ? 4 : 0).clipShape(arcShape).animation(animation)
+//            arcShape.stroke(configuration.strokeColor ?? Color.primary, lineWidth: (isNodeSelected() || shouldHighlightNode()) ? 4 : 0).clipShape(arcShape).animation(animation)
 
             if arc.width > 0 && (configuration.maximumRingsShownCount == nil || arc.level <= configuration.maximumRingsShownCount!)
                 && (configuration.maximumExpandedRingsShownCount == nil || arc.level <= configuration.maximumExpandedRingsShownCount!) {
